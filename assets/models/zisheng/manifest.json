@@ -1,0 +1,98 @@
+{
+  "source": "https://github.com/Rainnnee/zisheng",
+  "sourceCommit": "aff9ffde4c26000b8c1d6c1db65a73ad7059b764",
+  "checkpointSha256": "329ca0c61738a8ce03ecbdf106703245db4b76637797d62f19688c0ec37ea004",
+  "onnxSha256": "9f65f8f73bc623538cf612f2dc125de54a138e662d95e724f967dc02ad79e85d",
+  "bytes": 3558453,
+  "parameters": 880385,
+  "imageSize": 48,
+  "timesteps": 1000,
+  "betaStart": 0.0001,
+  "betaEnd": 0.02,
+  "characters": [
+    {
+      "glyph": "山",
+      "id": 0,
+      "strokes": 3,
+      "meaning": "mountain"
+    },
+    {
+      "glyph": "水",
+      "id": 1,
+      "strokes": 4,
+      "meaning": "water"
+    },
+    {
+      "glyph": "火",
+      "id": 2,
+      "strokes": 4,
+      "meaning": "fire"
+    },
+    {
+      "glyph": "心",
+      "id": 3,
+      "strokes": 4,
+      "meaning": "heart / mind"
+    },
+    {
+      "glyph": "永",
+      "id": 4,
+      "strokes": 5,
+      "meaning": "everlasting"
+    },
+    {
+      "glyph": "安",
+      "id": 5,
+      "strokes": 6,
+      "meaning": "peace / safety"
+    },
+    {
+      "glyph": "志",
+      "id": 6,
+      "strokes": 7,
+      "meaning": "aspiration"
+    },
+    {
+      "glyph": "花",
+      "id": 7,
+      "strokes": 8,
+      "meaning": "flower"
+    },
+    {
+      "glyph": "明",
+      "id": 8,
+      "strokes": 8,
+      "meaning": "bright / clear"
+    },
+    {
+      "glyph": "和",
+      "id": 9,
+      "strokes": 8,
+      "meaning": "harmony"
+    },
+    {
+      "glyph": "信",
+      "id": 10,
+      "strokes": 9,
+      "meaning": "trust"
+    },
+    {
+      "glyph": "笑",
+      "id": 11,
+      "strokes": 10,
+      "meaning": "smile / laughter"
+    }
+  ],
+  "training": {
+    "images": 3072,
+    "updates": 8000,
+    "fonts": 2,
+    "emaDecay": 0.995
+  },
+  "validation": {
+    "cases": 4,
+    "maximumAbsoluteError": 5.9604644775390625e-06
+  },
+  "browserSampler": "Default: original 1000-call DDPM update, streaming 101 states. Optional: deterministic DDIM eta=0 with 60 or 100 calls. Same checkpoint; JavaScript RNG differs from PyTorch.",
+  "status": "Qualitative pilot; no measured recognition accuracy or held-out-font result."
+}

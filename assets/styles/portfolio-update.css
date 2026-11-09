@@ -1,0 +1,87 @@
+/* Resume-backed content: an expanded Reading view without overcrowding the sky. */
+.project-card__cv{display:none}
+.work-group--research .experience-card--zisheng{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);background:#fdfbf7}
+.experience-card--zisheng .concept-preview{display:flex;align-items:center;background:#e8ecf0}
+.experience-card--zisheng .concept-cover{width:100%}
+.work-group--research .experience-card--zisheng h4{font-size:2.2rem}
+.work-group--competitions .work-group__cards{grid-template-columns:repeat(3,minmax(0,1fr))}
+.work-group--competitions .project-card{display:flex;flex-direction:column}
+.work-group--competitions .concept-preview{display:block}
+.concept-cover--usaco{display:grid;place-items:center;background:linear-gradient(135deg,#f6f0df,#fdfcf7);padding:2rem}
+.usaco-mark{display:block;max-width:100%;max-height:9rem;width:auto;height:auto;mix-blend-mode:multiply}
+.education-card__note + .education-card__note{margin-top:.4rem}
+.project-demo-host{margin-top:2rem;border:1px solid #ced9df;border-radius:7px;overflow:hidden;background:#fafbf9}
+.project-demo-host>summary{padding:1rem 1.25rem;cursor:pointer;font-size:.86rem;font-weight:600;list-style-position:inside}
+.project-demo-host>summary span{display:block;margin-top:.3rem;color:var(--ink-soft);font-size:.73rem;font-weight:400}
+.project-demo-frame{display:block;width:100%;height:800px;border:0;background:#fafbf9}
+.project-demo-host>p{margin:0;padding:.75rem 1.25rem;border-top:1px solid var(--line);font-size:.73rem;color:var(--ink-soft)}
+.project-detail__section ul{grid-column:2;margin:0;padding-left:1.1rem;color:#34536c;font-size:.95rem}
+.project-detail__section li+li{margin-top:.6rem}
+.project-detail__formula{grid-column:2;padding:1rem;background:#edf1f2;border-radius:4px;font:1rem/1.6 Georgia,serif;overflow-wrap:anywhere}
+.project-detail__jump{display:inline-block;margin-top:1rem;font-size:.8rem;font-weight:600}
+body[data-mode='accessible'] .project-card__cv{display:block;margin:.5rem 0 1rem;padding-left:1.2rem;font-size:.95rem;line-height:1.65;color:#333}
+body[data-mode='accessible'] .project-card__cv li+li{margin-top:.4rem}
+body[data-mode='accessible'] .project-card:has(.project-card__cv) .project-card__description{display:none}
+body[data-mode='accessible'] .work-group--research .experience-card--zisheng{display:block;background:none}
+body[data-mode='accessible'] .work-group--research .experience-card--zisheng h4{font-size:1.3rem}
+body[data-mode='accessible'] .project-demo-host{background:white;border-color:#bbb}
+body[data-mode='accessible'] .project-detail__section ul{color:#333}
+@media(max-width:900px){.work-group--competitions .work-group__cards{grid-template-columns:repeat(2,minmax(0,1fr))}.work-group--research .experience-card--zisheng{grid-template-columns:1fr 1fr}.work-group--research .experience-card--zisheng h4{font-size:1.8rem}}
+@media(max-width:700px){.work-group--research .experience-card--zisheng{display:flex;grid-column:auto}.project-detail__section ul,.project-detail__formula{grid-column:1}.project-demo-frame{height:900px}}
+@media(max-width:620px){.work-group--competitions .work-group__cards{grid-template-columns:1fr}.work-group--research .experience-card--zisheng h4{font-size:1.7rem}.usaco-mark{max-height:8rem}}
+
+.usaco-symbol{position:relative;display:block;width:min(240px,100%);aspect-ratio:240/130;overflow:hidden;mix-blend-mode:multiply}.usaco-symbol .usaco-mark{position:absolute;right:0;top:0;width:375%;height:100%;max-width:none;max-height:none;object-fit:fill}
+
+/* Four visible bodies of work, each with its own scale and browsing rhythm. */
+.work-shelf__controls{display:none}
+.work-shelf__thumbnails{display:none}
+body[data-work-shelves='true'] .work-shelf__thumbnails{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:.35rem}
+.work-shelf__thumbnails button{width:6.6rem;max-width:calc(50% - .4rem);min-width:0;padding:0 0 .45rem;border:0;border-bottom:2px solid transparent;background:none;color:#61798a;text-align:left;cursor:pointer;transition:border-color 180ms ease,color 180ms ease}
+.work-shelf__thumbnails img{display:block;width:100%;height:auto;aspect-ratio:760/420;object-fit:contain;border-radius:3px;opacity:.6;transition:opacity 180ms ease,transform 180ms ease}
+.work-shelf__thumbnails span{display:block;margin-top:.4rem;font-size:.65rem;line-height:1.4}
+.work-shelf__thumbnails button[aria-current]{border-bottom-color:#446d82;color:var(--ink)}
+.work-shelf__thumbnails button[aria-current] img,.work-shelf__thumbnails button:hover img{opacity:1}
+.work-shelf__thumbnails button:hover img{transform:translateY(-2px)}
+body[data-work-shelves='true'] .work-sections-nav{display:none}
+body[data-work-shelves='true'] .work-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4.5rem 2.5rem;align-items:start}
+body[data-work-shelves='true'] .work-group{min-width:0;margin:0}
+body[data-work-shelves='true'] .work-group--research,body[data-work-shelves='true'] .work-group--competitions{grid-column:1/-1}
+body[data-work-shelves='true'] .work-group__heading{display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.15rem;padding-bottom:.8rem;border-bottom:1px solid #69869b40}
+body[data-work-shelves='true'] .work-group__heading h3{font-size:1.8rem}
+body[data-work-shelves='true'] .work-shelf__controls{display:flex;flex-shrink:0;align-items:center;gap:.4rem}
+.work-shelf__controls button{display:grid;place-items:center;width:2.15rem;height:2.15rem;border:1px solid #8198a64d;border-radius:50%;background:#fffdf7b8;color:var(--ink);font:1rem Georgia,serif;cursor:pointer;transition:background 180ms ease,color 180ms ease}
+.work-shelf__controls button:hover:not(:disabled){background:var(--ink);color:#fffdf7}
+.work-shelf__controls button:disabled{opacity:.25;cursor:default}
+body[data-work-shelves='true'] .work-group__cards{display:grid;grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:86%;align-items:stretch;gap:1.2rem;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#6d8ca480 transparent;padding:.15rem 0 .85rem;-webkit-overflow-scrolling:touch}
+body[data-work-shelves='true'] .work-group--research .work-group__cards{grid-auto-columns:calc((100% - 1.5rem)/2);gap:1.5rem}
+body[data-work-shelves='true'] .work-group--competitions .work-group__cards{grid-auto-columns:calc((100% - 2.4rem)/3)}
+body[data-work-shelves='true'] .work-directory .project-card{display:flex;flex-direction:column;grid-column:auto;min-width:0;scroll-snap-align:start;border-radius:5px;background:#fffdf9;box-shadow:none}
+body[data-work-shelves='true'] .work-directory .concept-preview{display:block;flex:none;background:var(--project-cover-color,#e8ecf0)}
+body[data-work-shelves='true'] .work-directory .concept-cover{width:100%;aspect-ratio:760/420}
+body[data-work-shelves='true'] .work-directory .experience-card__body{display:flex;flex:1;flex-direction:column;min-height:0;padding:1.3rem 1.4rem}
+body[data-work-shelves='true'] .work-directory .project-card__meta{margin-bottom:.75rem;font-size:.66rem;line-height:1.5}
+body[data-work-shelves='true'] .work-directory .project-card h4{margin:0 0 .7rem;font-size:1.65rem;line-height:1.17}
+body[data-work-shelves='true'] .work-directory .project-card__description{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;font-size:.82rem;line-height:1.65;margin-bottom:1.1rem}
+body[data-work-shelves='true'] .work-directory .research-card__status{margin-bottom:.65rem;font-size:.64rem}
+body[data-work-shelves='true'] .work-directory .project-card__footer{margin-top:auto;gap:.8rem}
+body[data-work-shelves='true'] .work-directory .project-card__action{font-size:.73rem}
+body[data-work-shelves='true'] .work-group--research .project-card{border-top:2px solid #729aa8}
+body[data-work-shelves='true'] .work-group--research .concept-cover{aspect-ratio:2.2}
+body[data-work-shelves='true'] .work-group--research h4{font-size:1.85rem;max-width:27ch}
+body[data-work-shelves='true'] .work-group--research .project-card__description{-webkit-line-clamp:3}
+body[data-work-shelves='true'] .work-group--machine-learning .project-card{border-top:2px solid #80a5a9}
+body[data-work-shelves='true'] .work-group--machine-learning .experience-card__body{background:#f7fbfa}
+body[data-work-shelves='true'] .work-group--software .project-card{border-top:2px solid #9993b4}
+body[data-work-shelves='true'] .work-group--software .experience-card__body{background:#fbfaff}
+body[data-work-shelves='true'] .work-group--machine-learning h4,body[data-work-shelves='true'] .work-group--software h4{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:1.45rem;font-weight:550;letter-spacing:-.035em;min-height:2.4em}
+body[data-work-shelves='true'] .work-group--software .tag-row span{padding:.2rem .35rem;border:1px solid #9691b22e;border-radius:3px;font:.6rem/1.4 ui-monospace,SFMono-Regular,Consolas,monospace}
+body[data-work-shelves='true'] .work-group--software .tag-row span::after{display:none}
+body[data-work-shelves='true'] .work-group--competitions .project-card{border-top:2px solid #b19a74}
+body[data-work-shelves='true'] .work-group--competitions .experience-card__body{padding:1.15rem 1.25rem;background:#fbf8f1}
+body[data-work-shelves='true'] .work-group--competitions .concept-cover{aspect-ratio:2.5}
+body[data-work-shelves='true'] .work-group--competitions .concept-cover--usaco{padding:1rem}
+body[data-work-shelves='true'] .work-group--competitions .usaco-symbol{width:min(210px,100%)}
+body[data-work-shelves='true'] .work-group--competitions h4{font-size:1.45rem}
+body[data-work-shelves='true'] .work-group--competitions .project-card__description{font-size:.77rem}
+@media(max-width:900px){body[data-work-shelves='true'] .work-groups{gap:3.5rem 1.5rem}body[data-work-shelves='true'] .work-group--research .work-group__cards{grid-auto-columns:70%}body[data-work-shelves='true'] .work-group--competitions .work-group__cards{grid-auto-columns:44%}body[data-work-shelves='true'] .work-group__heading h3{font-size:1.5rem}body[data-work-shelves='true'] .work-directory .experience-card__body{padding:1.15rem}}
+@media(max-width:680px){body[data-work-shelves='true'] .work-groups{grid-template-columns:1fr;gap:3rem}body[data-work-shelves='true'] .work-group--research,body[data-work-shelves='true'] .work-group--competitions{grid-column:auto}body[data-work-shelves='true'] .work-group__cards,body[data-work-shelves='true'] .work-group--research .work-group__cards,body[data-work-shelves='true'] .work-group--competitions .work-group__cards{grid-auto-columns:86%;gap:.9rem}body[data-work-shelves='true'] .work-group--research h4{font-size:1.65rem}body[data-work-shelves='true'] .work-group--research .concept-cover{aspect-ratio:760/420}body[data-work-shelves='true'] .work-group__heading h3{font-size:1.65rem}}

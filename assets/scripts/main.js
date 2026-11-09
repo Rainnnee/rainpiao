@@ -241,7 +241,7 @@
         let targetId;
         try { targetId = decodeURIComponent(initialHash.slice(1)); }
         catch { targetId = initialHash.slice(1); }
-        const target = document.getElementById(targetId);
+        let target = document.getElementById(targetId);
         if (target) {
           const previousBehavior = document.documentElement.style.scrollBehavior;
           document.documentElement.style.scrollBehavior = "auto";

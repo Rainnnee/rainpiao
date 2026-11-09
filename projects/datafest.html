@@ -14,14 +14,15 @@
       }
     </script>
     <link rel="stylesheet" href="../assets/styles/main.css?v=20261023-2">
-    <link rel="stylesheet" href="../assets/styles/project-pages.css?v=20261023-1">
-    <script src="../assets/scripts/project-detail.js?v=20261014-1" defer></script>
+    <link rel="stylesheet" href="../assets/styles/project-pages.css?v=20261029-2">
+    <link rel="stylesheet" href="../assets/styles/portfolio-update.css?v=20261109-1">
+    <script type="module" src="../assets/scripts/project-detail.js?v=20261109-1"></script>
   </head>
   <body class="project-page" data-mode="animated">
     <script>document.body.dataset.mode = document.documentElement.dataset.mode || "animated";</script>
     <img class="sky-background" src="../assets/images/sky-full.png?v=20261013-7" alt="" width="3344" height="1880" decoding="async">
     <header class="project-detail-nav">
-      <a class="project-detail-nav__back" href="../index.html#experience">← All experience</a>
+      <a class="project-detail-nav__back" href="../index.html#competitions">← Back to Competitions</a>
       <a class="project-detail-nav__name" href="../index.html" aria-label="Rain Piao">ℝain ℙiao</a>
       <button class="mode-toggle" type="button" role="switch" aria-checked="false" aria-label="Switch to Reading mode" hidden>
         <span class="mode-toggle__option mode-toggle__option--immersive">Immersive</span>
@@ -29,11 +30,9 @@
         <span class="mode-toggle__option mode-toggle__option--reading">Reading</span>
       </button>
     </header>
-    <main class="project-detail content-width"><article><div class="project-detail__hero"><div><p class="project-detail__eyebrow">ASA DataFest at UCLA · May 2026</p><h1><span class="immersive-title">A dataset, five people, 48 hours.</span><span class="reading-title">Healthcare Data Analysis</span></h1><p class="project-detail__summary">I coordinated a five-person team working with de-identified patient data at ASA DataFest.</p></div><img class="project-detail__mark" src="../assets/images/datafest-logo.png" alt="" aria-hidden="true" loading="lazy"></div>
+    <main class="project-detail content-width"><article><figure class="project-detail__art"><img src="../assets/images/concepts/datafest.svg" alt="Patient-data records organized into charts for healthcare analysis." width="760" height="420" decoding="async" fetchpriority="high"></figure><div class="project-detail__hero"><div><p class="project-detail__eyebrow">ASA DataFest at UCLA · May 2026</p><h1><span class="immersive-title">A dataset, five people, 48 hours.</span><span class="reading-title">Healthcare Data Analysis</span></h1><p class="project-detail__summary">I coordinated a five-person team working with de-identified patient data at ASA DataFest.</p></div><img class="project-detail__mark" src="../assets/images/datafest-logo.png" alt="" aria-hidden="true" loading="lazy"></div>
       <dl class="project-detail__facts"><div><dt>Role</dt><dd>Team coordinator</dd></div><div><dt>Team</dt><dd>Five people</dd></div><div><dt>Tools</dt><dd>R, ggplot2, Spearman correlation</dd></div></dl>
-      <section class="project-detail__section" aria-labelledby="detail-0"><h2 id="detail-0">Working with the data</h2><p>We cleaned and filtered the data, then looked at relationships among stress, age, encounter volume, and social needs. We used ggplot2 to visualize the patterns and Spearman correlation to examine the relationships.</p></section>
-      <section class="project-detail__section" aria-labelledby="detail-1"><h2 id="detail-1">What we found</h2><p>In the dataset, younger patients and people reporting food, financial, or transportation needs tended to report higher stress. We used these associations to inform recommendations for cancer care.</p></section>
-      <section class="project-detail__section" aria-labelledby="detail-2"><h2 id="detail-2">Making it understandable</h2><p>We brought four analyses together in a five-minute, two-slide presentation. I coordinated the team through the analysis and the final presentation.</p></section>
-    </article><a class="project-detail__back-bottom" href="../index.html#experience">← Back to Experience</a></main>
+      <section class="project-detail__section" aria-labelledby="context"><h2 id="context">48 hours, five people</h2><p>At ASA DataFest at UCLA, I coordinated a five-person team working on de-identified patient data. My work centered on stress correlations and on the presentation connecting our four analyses: geographic access, stress and social needs, care continuity, and patient-portal engagement.</p></section><section class="project-detail__section" aria-labelledby="pipeline"><h2 id="pipeline">From records to patients</h2><p>I joined survey, demographic, and encounter tables in R, reconciled identifiers and types, parsed dates, and aggregated repeated questionnaires before patient-level tests.</p><p>Features included ordinal stress scores, encounter counts, distinct visit days, and gaps between visit dates. Keeping question responses, encounters, and patients separate as units of analysis was important.</p></section><section class="project-detail__section" aria-labelledby="methods"><h2 id="methods">Statistical analysis</h2><p>I used Spearman rank correlation with Benjamini–Hochberg correction and nonparametric cohort comparisons. The work also included age-bin-adjusted logistic models exploring screening and social needs by patient-portal status.</p><p>These were exploratory associations in observational records, not causal effects or validated clinical predictions. The underlying data and unpublished patient-level results are not shared here.</p></section><section class="project-detail__section" aria-labelledby="communication"><h2 id="communication">Making the work legible</h2><p>I built ggplot2/R Markdown reports and scripted a five-minute patient-journey presentation synthesizing the team’s analyses. The coordination and communication work was part of the project, alongside the statistical pipeline.</p></section>
+    </article><a class="project-detail__back-bottom" href="../index.html#competitions">← Back to Competitions</a></main>
   </body>
 </html>

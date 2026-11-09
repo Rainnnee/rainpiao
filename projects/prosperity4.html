@@ -14,14 +14,15 @@
       }
     </script>
     <link rel="stylesheet" href="../assets/styles/main.css?v=20261023-2">
-    <link rel="stylesheet" href="../assets/styles/project-pages.css?v=20261023-1">
-    <script src="../assets/scripts/project-detail.js?v=20261014-1" defer></script>
+    <link rel="stylesheet" href="../assets/styles/project-pages.css?v=20261029-2">
+    <link rel="stylesheet" href="../assets/styles/portfolio-update.css?v=20261109-1">
+    <script type="module" src="../assets/scripts/project-detail.js?v=20261109-1"></script>
   </head>
   <body class="project-page" data-mode="animated">
     <script>document.body.dataset.mode = document.documentElement.dataset.mode || "animated";</script>
     <img class="sky-background" src="../assets/images/sky-full.png?v=20261013-7" alt="" width="3344" height="1880" decoding="async">
     <header class="project-detail-nav">
-      <a class="project-detail-nav__back" href="../index.html#experience">← All experience</a>
+      <a class="project-detail-nav__back" href="../index.html#competitions">← Back to Competitions</a>
       <a class="project-detail-nav__name" href="../index.html" aria-label="Rain Piao">ℝain ℙiao</a>
       <button class="mode-toggle" type="button" role="switch" aria-checked="false" aria-label="Switch to Reading mode" hidden>
         <span class="mode-toggle__option mode-toggle__option--immersive">Immersive</span>
@@ -29,10 +30,9 @@
         <span class="mode-toggle__option mode-toggle__option--reading">Reading</span>
       </button>
     </header>
-    <main class="project-detail content-width"><article><div class="project-detail__hero"><div><p class="project-detail__eyebrow">IMC Prosperity 4 · Spring 2026</p><h1><span class="immersive-title">Building a trading strategy.</span><span class="reading-title">Algorithmic Trading Strategies</span></h1><p class="project-detail__summary">I developed and backtested Python strategies for the IMC Prosperity trading competition.</p></div><img class="project-detail__mark" src="../assets/images/prosperity4-official.png" alt="" aria-hidden="true" loading="lazy"></div>
-      <dl class="project-detail__facts"><div><dt>Tools</dt><dd>Python & backtesting</dd></div><div><dt>Team result</dt><dd>Top 16% of 18,803 teams</dd></div><div><dt>Progress</dt><dd>Through Round 3</dd></div></dl>
-      <section class="project-detail__section" aria-labelledby="detail-0"><h2 id="detail-0">The strategy work</h2><p>I worked with adaptive mean reversion, position limits, and end-of-round controls. I ran more than 20 backtest iterations per round to examine the behavior of the strategies and refine their parameters.</p></section>
-      <section class="project-detail__section" aria-labelledby="detail-1"><h2 id="detail-1">The competition</h2><p>Our team placed in the top 16% of 18,803 teams and competed through Round 3.</p></section>
-    </article><a class="project-detail__back-bottom" href="../index.html#experience">← Back to Experience</a></main>
+    <main class="project-detail content-width"><article><figure class="project-detail__art"><img src="../assets/images/concepts/trading.svg" alt="Price movements, trading signals, and portfolio positions." width="760" height="420" decoding="async" fetchpriority="high"></figure><div class="project-detail__hero"><div><p class="project-detail__eyebrow">IMC Prosperity 4 · Spring 2026</p><h1><span class="immersive-title">Building a trading strategy.</span><span class="reading-title">Algorithmic Trading Strategies</span></h1><p class="project-detail__summary">I developed and backtested Python strategies for the IMC Prosperity trading competition.</p></div><img class="project-detail__mark" src="../assets/images/prosperity4-official.png" alt="" aria-hidden="true" loading="lazy"></div>
+      <dl class="project-detail__facts"><div><dt>Tools</dt><dd>Python & backtesting</dd></div><div><dt>Qualification</dt><dd>Top 16% of 18,803 teams</dd></div><div><dt>Progress</dt><dd>All five rounds completed</dd></div></dl>
+      <section class="project-detail__section" aria-labelledby="competition"><h2 id="competition">Five rounds</h2><p>On a four-person team, we qualified in the top 16% and completed all five rounds of IMC Prosperity 4. The top-16% figure refers to qualification, not our final standing.</p></section><section class="project-detail__section" aria-labelledby="implementation"><h2 id="implementation">An event-driven trading bot</h2><p>I built Python strategies with per-product modules, bounded rolling histories, persistent JSON state, and inventory-aware limit-order generation. Signals included rolling OLS, EMA, local z-scores, and persistent regime states.</p><p>Different products called for different behavior: trend carry, mean reversion, and inventory-skewed two-sided quotes were not interchangeable.</p></section><section class="project-detail__section" aria-labelledby="later-rounds"><h2 id="later-rounds">Options, flow, and spreads</h2><p>Later work added Black–Scholes option valuation, cross-strike volatility fitting, decaying counterparty-flow features, and pair/basket spreads. For basket signals, executable bids, asks, and unmatched inventory mattered more than an attractive midpoint relationship.</p></section><section class="project-detail__section" aria-labelledby="iteration"><h2 id="iteration">What I checked</h2><p>I iterated 20+ backtest variants, using fill prices, turnover, inventory paths, and product-level PnL to diagnose execution costs and model bias. Simulator results were useful for iteration, but did not establish consistent profitability or out-of-sample performance.</p></section>
+    </article><a class="project-detail__back-bottom" href="../index.html#competitions">← Back to Competitions</a></main>
   </body>
 </html>

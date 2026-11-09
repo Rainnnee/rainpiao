@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#d8edfa">
+    <meta name="description" content="Rain Piao’s character-conditioned diffusion pilot, with a working browser-based sampler.">
+    <title>字生 · Zisheng — Character Diffusion — Rain Piao</title>
+    <script>
+      try {
+        document.documentElement.dataset.mode = localStorage.getItem("rainpiao-mode") === "accessible" ? "accessible" : "animated";
+      } catch {
+        document.documentElement.dataset.mode = "animated";
+      }
+    </script>
+    <link rel="stylesheet" href="../assets/styles/main.css?v=20261023-2">
+    <link rel="stylesheet" href="../assets/styles/project-pages.css?v=20261029-2">
+    <link rel="stylesheet" href="../assets/styles/portfolio-update.css?v=20261109-1">
+    <script type="module" src="../assets/scripts/project-detail.js?v=20261109-1"></script>
+  </head>
+  <body class="project-page" data-mode="animated">
+    <script>document.body.dataset.mode = document.documentElement.dataset.mode || "animated";</script>
+    <img class="sky-background" src="../assets/images/sky-full.png?v=20261013-7" alt="" width="3344" height="1880" decoding="async">
+    <header class="project-detail-nav">
+      <a class="project-detail-nav__back" href="../index.html#research">← Back to Research</a>
+      <a class="project-detail-nav__name" href="../index.html" aria-label="Rain Piao">ℝain ℙiao</a>
+      <button class="mode-toggle" type="button" role="switch" aria-checked="false" aria-label="Switch to Reading mode" hidden>
+        <span class="mode-toggle__option mode-toggle__option--immersive">Immersive</span>
+        <span class="mode-toggle__track" aria-hidden="true"><span class="mode-toggle__thumb"></span></span>
+        <span class="mode-toggle__option mode-toggle__option--reading">Reading</span>
+      </button>
+    </header>
+    <main class="project-detail content-width"><article><figure class="project-detail__art"><img src="../assets/images/concepts/zisheng.svg" alt="Vector illustration of Gaussian noise flowing through a learned reverse process toward a Chinese character." width="760" height="420" decoding="async"></figure><div class="project-detail__hero"><div><p class="project-detail__eyebrow">字生 · STATS 100A Honors · October 2026–present</p><h1>字生 · Zìshēng</h1><p class="project-detail__summary">A small diffusion model that learns to turn Gaussian noise into Chinese character images. I wanted to make the reverse process something I could inspect, one sample at a time.</p><a class="project-detail__jump" href="#demo">Try the model ↓</a></div></div><dl class="project-detail__facts"><div><dt>Status</dt><dd>Working qualitative pilot</dd></div><div><dt>Model</dt><dd>Conditional U-Net · 0.88M parameters</dd></div><div><dt>Data</dt><dd>3,072 images · 12 labels</dd></div></dl><details class="project-demo-host" id="demo" data-project-demo="zisheng"><summary>Try 字生<span>Choose a character and a seed; inspect the actual model states.</span></summary><div data-demo-mount></div><p><a href="../demos/zisheng/" target="_blank" rel="noopener">Open the demo in its own page ↗</a></p></details><section class="project-detail__section" aria-labelledby="implemented"><h2 id="implemented">What I built</h2><p>I implemented a compact conditional U-Net in PyTorch with learned character embeddings and sinusoidal timestep embeddings. It predicts the Gaussian noise added to a 48 × 48 image.</p><p>The pilot uses 3,072 synthetic print glyphs across 12 character labels and two Noto CJK font families, varying size, line weight, position, and rotation. Training used 8,000 AdamW updates and EMA weights.</p></section><section class="project-detail__section" aria-labelledby="math"><h2 id="math">The process</h2><p>The forward marginal gradually removes image information: xₜ = √ᾱₜ x₀ + √(1 − ᾱₜ) ε, with ε ∼ N(0, I). The network learns εθ(xₜ, t, y), where y is the requested character.</p><p>At generation time, sampling starts from Gaussian noise. The learned noise estimate guides successive updates toward an image for that label. This is a pixel-based model; it does not generate pen trajectories or stroke order.</p></section><section class="project-detail__section" aria-labelledby="sampler"><h2 id="sampler">From the local pilot to this page</h2><p>The original checkpoint-backed sampler runs a 1,000-step DDPM chain and streams 101 actual states, with seed controls and per-sample replay.</p><p>For the website, I exported the same 880,385-parameter model to ONNX. A worker runs the repository’s original 1,000-step DDPM update in the browser, including fresh Gaussian noise at each reverse step and 101 displayed states. Faster 60- and 100-step DDIM samplers are optional. Loading is optional and starts only when you press Generate.</p></section><section class="project-detail__section" aria-labelledby="questions"><h2 id="questions">What I want to test next</h2><p>How much corruption can a model undo before it relies mainly on the character prior rather than the particular input? I’m also interested in whether spatial crowding and structural complexity change the model capacity needed to preserve character identity.</p><p>These are proposed directions, not findings. A useful next step is to define recognition and structural-fidelity measures, keep a font family out of training, and compare multiple seeds. The present 12 labels are uneven by stroke count, so they do not establish a stroke-complexity relationship.</p></section><section class="project-detail__section" aria-labelledby="status"><h2 id="status">Current status</h2><p>A working qualitative pilot. The samples include recognizable and malformed glyphs; recognition accuracy and unseen-font generalization have not been measured.</p><p><a href="https://github.com/Rainnnee/zisheng" target="_blank" rel="noopener">Public repository ↗</a> · <a href="https://github.com/Rainnnee/zisheng/blob/main/docs/math.md" target="_blank" rel="noopener">Mathematics and code map ↗</a></p></section></article><a class="project-detail__back-bottom" href="../index.html#research">← Back to Research</a></main>
+  </body>
+</html>

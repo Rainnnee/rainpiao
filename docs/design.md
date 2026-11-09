@@ -80,7 +80,7 @@ Music metadata supplied by Rain: Breath Away is Melodic Dubstep at 73 BPM, B♭ 
 
 The editorial design and approved vector artwork were published in [PR #10](https://github.com/Rainnnee/rainpiao/pull/10), squash commit `ed7a6c86db1be0359e70a8f61a83a5ab8308fcab`; the public page was verified after deployment. The following work is on `feat/project-library-and-toolkit` for preview.
 
-Work is divided into separate Research, Software, and Competitions sections, all visible at once. A compact navigation strip jumps between them. Research has an illustrated feature, software shows three compact cards across, and competitions have two shorter entries. Concise summaries improve scanning; full notes stay on detail pages. Reading keeps the same classification in a continuous text list. The empty employment scaffold is a separate chronological timeline; no position or employer is invented, and neither a section nor a navigation link appears until real data is supplied.
+Work is divided into Research, ML projects, Software projects, and Competitions & distinctions. Immersive leads with an ML feature, places Research and Software in independent supporting shelves, and uses a shorter row for competitions. Reading keeps the full grouped document. Concise summaries improve scanning; full notes stay on detail pages. Reading keeps the same classification in a continuous text list. The empty employment scaffold is a separate chronological timeline; no position or employer is invented, and neither a section nor a navigation link appears until real data is supplied.
 
 Pusheng's original SVG cover shows an original engraved-note motif becoming discrete notes on a MIDI piano roll. It follows the same quiet, detailed vector-art language as the other covers, with no explanatory diagram labels. Its ongoing status and current recognition/evaluation stage are explicit. The repository address is confirmed in the local project's Git remote and is labeled not public yet.
 
@@ -101,3 +101,56 @@ The new BruinML entry, “Rollouts Needed to Rank,” summarizes the research qu
 Rain confirmed that the CLIP project is complete. Its period now ends in October 2026, aligned with the October 12 ALT 2027 submission deadline; the manuscript remains under review. The [official ALT 2027 schedule](https://algorithmiclearningtheory.org/alt2027/call-for-papers/) gives January 5, 2027 as author notification. A publication decision is separate from the active research period; do not imply acceptance or extend the project through that future date.
 
 Banner-height transitions are now limited to the intro lift. Skipping the intro or switching display modes changes its height immediately, so a subsequent section jump is not displaced by a delayed banner resize. Normal blur/rise and lift timings are unchanged.
+
+## Competition achievements
+
+USACO is a complete gallery card before Prosperity and DataFest. The official image is from https://usaco.org/current/images/usaco_logo.png. The card crops the tree portion with CSS; the detail page shows the complete unmodified wordmark. Reading presents the 2023 Gold distinction as text.
+
+## Project article panels
+
+Project cards progressively enhance into a native modal dialog. The portfolio remains in place underneath, with a soft 480ms rise of 32px and a shorter 260ms close; there is no zoom, page transition, or replay of the intro. A lightly dimmed backdrop separates the ivory article column from the sky. The original vector cover opens each article in Immersive mode; Reading keeps a plain text article without the artwork. All seven standalone pages also contain their corresponding SVG cover.
+
+The panel has its own scrolling region and an always-visible return control. Outside clicks, Escape, and browser Back dismiss it; focus and the exact portfolio scroll position return to the original link. Browser Forward reopens it. A `project` query parameter shares or reloads the panel, and “Open full page” preserves a conventional standalone alternative. Modified and middle clicks retain ordinary link behavior; without JavaScript or dialog support, project links load normal pages. Returning from a standalone project skips the homepage intro.
+
+The panel fetches the same static article used on the standalone page, resolves relative links and images, and namespaces section IDs. No project prose or artwork is duplicated. Loading and failure states keep the return and full-page controls available. Reading suppresses the panel animation. The explicitly selected Immersive mode follows Rain’s site-wide preference to show motion, even when the browser reports reduced motion.
+
+Panel motion follows the opening wordmark’s blur-to-clear language at a much smaller scale: a 3px blur resolves while the paper floats upward, with a 7–9px stagger for the cover and article. Nothing scales or zooms. The backdrop gently dims and softens, then clears as the panel drifts down 18px on exit. Interrupted transitions start from their current visual position; closing waits for the animation end with a short fallback, so content does not disappear mid-transition. Reading removes both the panel motion and all content staggering. Browser reduced motion is the fallback when no explicit Immersive mode is set.
+
+## Zisheng feature and browser sampler — November 9, 2026
+
+Zisheng leads the Machine learning shelf as an implemented conditional-model pilot. The banner is an original vector composition: a Gaussian particle cloud, smooth gathering trajectories, a conditional denoiser, and a character outline. It is a conceptual illustration, not a visualization of recorded model outputs. It contains no raster image elements or pixel-grid tiles. The 永 outline is from Noto Sans CJK SC under SIL OFL 1.1; `assets/images/concepts/NOTO-OFL.txt` retains its license. `scripts/draw-zisheng-banner.py` recreates the art from the font. No generative-image service was used.
+
+The working model is separate, inside the Zisheng project article. A collapsible, automatically sized same-origin iframe keeps its worker lifecycle independent. Immersive opens the demo section; Reading leaves it collapsed. Closing the panel or demo disposes the iframe and inference worker. A direct demo URL also works. The runtime and checkpoint load only after Generate, never on the homepage or banner.
+
+Default sampling now follows the source repository’s full 1,000-step DDPM posterior update, with fresh Gaussian noise at each nonfinal reverse step. It streams 101 actual states. Each Generate click selects a fresh cryptographic seed unless the visitor explicitly locks it. The faster 60/100-call DDIM samplers remain labeled alternatives; they share the weights but are not the original DDPM trajectory. Replay, timeline scrubbing, five actual checkpoint thumbnails, stop, and live-follow controls expose the process without interpolating a font into noise. The initial idle canvas is blank rather than a decorative fake noise pattern.
+
+The ONNX export uses the public checkpoint at aff9ffde4c26000b8c1d6c1db65a73ad7059b764. Four noise-prediction cases match PyTorch within maximum absolute error 5.96e-6. `assets/models/zisheng/manifest.json` records hashes, dimensions, labels, and limitations. ONNX Runtime Web 1.31.1 is self-hosted, with MIT license and third-party notices retained. WebGPU is preferred; WebAssembly runs inference in the worker as a CPU fallback. The model is 3.6 MB; the inference binary is a larger optional first-use download. No API key, inference server, paid calls, training uploads, or telemetry is required.
+
+Reference: the source project https://github.com/Rainnnee/zisheng; ONNX Runtime Web docs https://onnxruntime.ai/docs/tutorials/web/ep-webgpu.html; the DDIM paper https://arxiv.org/abs/2010.02502 for the optional accelerated sampler.
+
+Seed behavior was verified in-browser: consecutive unlocked runs used different seeds; locking a seed produced pixel-identical canvas captures in two WebGPU runs. The original DDPM generated all 101 states inside the project panel. Reading-mode project detail keeps the demo collapsed; mobile checks show no horizontal overflow.
+
+## Work categories and visual hierarchy — November 9, 2026
+
+The former single rail obscured what the entries represented. Work now has four physically separate sections: Research, ML projects, Software projects, and Competitions & distinctions. Research describes formal studies; Machine learning contains working model projects; Software contains workflow and system builds; Competitions records event participation and attained distinctions. Research is not inferred simply from the use of ML, and an algorithmic competition remains in its event context.
+
+The ML feature spans the content width, followed by separately labelled Research and Software shelves side by side, with a partial next card and restrained arrow controls. Their grouping is structural, not a colour filter. Competitions occupies a shorter row beneath, with all three entries visible on wide screens; USACO comes before IMC and DataFest. On phones each named section occupies a separate row and scrolls independently.
+
+The layout keeps every SVG but removes the global artwork index, item count, repeated category labels, and “scroll to explore” instruction. ML, research, and software each have their own compact artwork-thumbnail strip, making the number and identity of projects evident without a written count. Each thumbnail jumps to its project and follows native gallery scrolling; Reading hides these controls. Category headings, independent rails, partial next cards, and arrow buttons communicate structure directly. Research uses serif study titles and visible study status; builds use clear sans-serif titles; competition captions use warm ivory and a more compact scale. Introduction and education retain their open spacing. Reading uses the same taxonomy as a continuous CV and omits gallery motion and controls.
+
+
+## Editorial balance and visitor review — November 9, 2026
+
+The visitor review found a weak hierarchy in the 2,143-pixel work block, an oversized phone-screen image in Running, and five personal interests presented with much the same card rhythm. The introduction and education were already readable, distinctive, and spacious, so their layout and photo crops were retained.
+
+ML projects now lead with a wide, manually controlled feature panel. Zisheng is the default feature: the complete existing SVG occupies a light illustration area alongside a navy caption and a clear link to the real project/demo panel. PocketSolver occupies the same rail; there are no duplicate cards or separate feature-copy sources. Research and Software remain separately labelled supporting shelves beneath, with their own thumbnails. Competitions stays a compact final row. All original artwork and category membership are preserved. Reading uses the same source content in a complete CV list.
+
+Gallery arrow buttons wrap at either end when the visitor requests another item. Native scrolling and Home/End remain finite; there is no autoplay, timer, vertical-scroll interception, or duplicate “infinite” content. Thumbnails show the collection and the current item directly. The feature treatment is inspired by the hierarchy of a film catalogue, without adding “trending” claims or invented project rankings.
+
+The personal area is a two-row editorial spread. CFan is a warm theatre-program panel with a two-column credit list; SouLA has an original decorative SVG staff and beamed notes. The notes are decorative illustration, not a transcription of a particular recording. Running uses a race-bib treatment with the supplied workout time, distance and pace; the complete supplied Apple Watch image remains available through “View run record” instead of appearing as a tiny phone screen. VALORANT retains its actual rank badges and recorded update date. Chess uses a checkerboard, the supplied Lichess mark and the explicitly approximate rating. No results, affiliations, roles or dates were invented. DOM order follows the visual order for keyboard navigation.
+
+The navigation order now matches the actual Music → Personal page order. Personal hover movement is limited to two pixels. The headline intro, fixed sky, clear-sky ending, existing portraits, and optional Reading mode are retained. All new styling lives in `assets/styles/editorial-refinement.css`; no raster-art generation or external UI library was required.
+
+The review also found doubled anchor spacing: work-section scroll margins were added to the page’s global scroll padding. One navigation-height-based root offset now handles anchor positioning, with work-group margins cleared. This keeps clicked headings below the sticky navigation on desktop and phones without an unexplained extra gap.
+
+At 320px, the theatre credit grid initially split Chinese play titles and the actor name across cramped lines. It now becomes a single credit column below 380px. At phone and tablet widths the chess entry becomes a compact horizontal strip, and gallery keyboard handling leaves modified browser shortcuts untouched.
