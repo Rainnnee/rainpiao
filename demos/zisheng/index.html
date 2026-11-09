@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Try 字生 — Rain Piao</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+<main>
+  <header><p class="eyebrow">字生 / In your browser</p><h1>A character, from noise.</h1><p>Pick a character. Watch the model work from fresh noise.</p></header>
+  <div class="studio">
+    <div class="output"><div class="canvas-wrap"><canvas id="sample" width="48" height="48" role="img" aria-label="Character preview, waiting for generation">Your browser needs canvas support to show the generated character.</canvas><span id="empty-state">Your next character<br>starts here.</span></div><div class="output-caption"><span id="glyph-label">永 · everlasting</span><span>48 × 48</span></div></div>
+    <form id="controls">
+      <label for="character">Character</label><select id="character" name="character"><option value="0">山 · mountain</option><option value="1">水 · water</option><option value="2">火 · fire</option><option value="3">心 · heart / mind</option><option value="4" selected>永 · everlasting</option><option value="5">安 · peace / safety</option><option value="6">志 · aspiration</option><option value="7">花 · flower</option><option value="8">明 · bright / clear</option><option value="9">和 · harmony</option><option value="10">信 · trust</option><option value="11">笑 · smile / laughter</option></select>
+      <label for="seed">Seed</label><div class="seed-row"><input id="seed" name="seed" type="number" min="0" max="4294967295" step="1" value="7" required><button type="button" id="shuffle" aria-label="Choose another random seed">↻</button></div><label class="seed-lock"><input id="lock-seed" type="checkbox"> Keep this seed for repeat runs</label>
+      <label for="steps">Sampling</label><select id="steps"><option value="1000" selected>Original DDPM · 1,000 steps</option><option value="60">Faster DDIM · 60 steps</option><option value="100">Faster DDIM · 100 steps</option></select>
+      <button type="submit" id="generate" class="primary">Load model &amp; generate</button><button type="button" id="stop" hidden>Stop generation</button>
+      <p class="download-note">New seed on every Generate, unless locked. The model and inference engine load once, on your device.</p>
+    </form>
+  </div>
+  <div class="timeline"><div class="timeline-heading"><label for="timeline">Denoising timeline</label><output id="step-label" for="timeline" aria-live="off">Ready when you are</output></div><input id="timeline" type="range" min="0" max="0" value="0" disabled aria-label="Inspect the denoising steps"><div class="timeline-actions"><button type="button" id="replay" disabled>Replay</button><button type="button" id="follow" hidden>Follow live</button><button type="button" id="recorded">Explore a recorded example</button></div><div id="checkpoints" class="checkpoints" aria-label="Selected actual denoising states"></div></div>
+  <p id="status" role="status" aria-live="polite">Generate a new sample, or inspect a recorded model run.</p>
+  <details><summary>What’s running?</summary><p>The original 880,385-parameter conditional U-Net and the repository’s 1,000-step DDPM update, with fresh Gaussian noise at each reverse step. The timeline records 101 actual states, including the starting noise. The first steps can still look noisy; recognizable structure often arrives later.</p><p>The faster DDIM options use the same weights but take a different, deterministic sampling path. Browser and PyTorch random-number generators differ, so the same numeric seed does not produce identical pixels across implementations.</p><p>These are synthetic printed-glyph samples from a 12-character pilot, not handwriting or pen-stroke paths. Recognition accuracy and unseen-font performance have not been measured.</p><p><a href="https://github.com/Rainnnee/zisheng" target="_blank" rel="noopener">Project source ↗</a> · <a href="../../assets/models/zisheng/manifest.json" target="_blank" rel="noopener">Model provenance ↗</a></p></details>
+</main>
+</body></html>

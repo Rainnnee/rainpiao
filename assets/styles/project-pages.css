@@ -2,6 +2,8 @@
 .project-detail-nav a { text-decoration: none; font-size: .8rem; }
 .project-detail-nav__name { font-family: Georgia,serif; font-weight: 600; }
 .project-detail { max-width: 900px; padding-block: clamp(3rem,7vw,6rem); }
+.project-detail__art { margin: 0; overflow: hidden; border-radius: .5rem; background: #e3e8e8; }
+.project-detail__art img { display: block; width: 100%; max-height: 25rem; height: auto; object-fit: contain; }
 .project-detail__hero { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: start; gap: 2rem; padding: 2.5rem 0; border-bottom: 2px solid var(--ink); }
 .project-detail__eyebrow { margin-bottom: 1.25rem; font-size: .72rem; color: var(--ink-soft); }
 .project-detail__hero h1 { max-width: 20ch; margin: 0; font: 400 clamp(2.5rem,5vw,4rem)/1.08 Georgia,serif; letter-spacing: -.045em; }
@@ -13,9 +15,11 @@
 .project-detail__section { display: grid; grid-template-columns: .7fr 1.5fr; gap: 2rem; margin-top: 2.5rem; }
 .project-detail__section h2 { font-size: 1.4rem; line-height: 1.2; }
 .project-detail__section p { margin: 0; max-width: 65ch; color: #34536c; font-size: .98rem; }
+.project-detail__section > p { grid-column: 2; }
 .project-detail__back-bottom { display: inline-block; margin-top: 3rem; font-size: .85rem; font-weight: 600; }
 body[data-mode='accessible'] .project-detail-nav { position: static; padding-inline: 0; border: 0; border-bottom: 1px solid #bbb; border-radius: 0; background: white; backdrop-filter: none; }
 body[data-mode='accessible'] .project-detail__mark { display: none; }
+body[data-mode='accessible'] .project-detail__art { display: none; }
 body[data-mode='accessible'] .project-detail__hero { display: block; }
 body[data-mode='accessible'] .project-detail__section p { color: #333; }
 @media (max-width: 700px) {
@@ -25,4 +29,5 @@ body[data-mode='accessible'] .project-detail__section p { color: #333; }
  .project-detail__mark { width: 3rem; max-height: 3rem; }
  .project-detail__facts { grid-template-columns: 1fr; gap: 1rem; }
  .project-detail__section { grid-template-columns: 1fr; gap: .7rem; }
+ .project-detail__section > p { grid-column: 1; }
 }
