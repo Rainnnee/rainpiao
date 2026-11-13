@@ -154,3 +154,7 @@ The navigation order now matches the actual Music → Personal page order. Perso
 The review also found doubled anchor spacing: work-section scroll margins were added to the page’s global scroll padding. One navigation-height-based root offset now handles anchor positioning, with work-group margins cleared. This keeps clicked headings below the sticky navigation on desktop and phones without an unexplained extra gap.
 
 At 320px, the theatre credit grid initially split Chinese play titles and the actor name across cramped lines. It now becomes a single credit column below 380px. At phone and tablet widths the chess entry becomes a compact horizontal strip, and gallery keyboard handling leaves modified browser shortcuts untouched.
+
+## Feature proportions — November 12, 2026
+
+The ML feature's caption spacing and forced illustration minimum height made the card taller than the SVG's natural composition. This follow-up reduces caption padding, heading size, and paragraph spacing, and removes that minimum height. The complete vector drawing retains its proportions; the phone layout still stacks artwork above text. This adjustment follows the November 9 release.
